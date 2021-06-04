@@ -3,10 +3,9 @@ version: "3.3"
 services:
   app:
     build: .
-    image: app-dev
-    container_name: node-dev5
+    container_name: app-dev
     ports:
-      - 3000:3000
+      - 8080:8080
     volumes:
       - ./src:/app/src
   database:

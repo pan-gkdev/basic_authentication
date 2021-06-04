@@ -1,9 +1,9 @@
-FROM node:8.4.0-alpine
-
-EXPOSE 3000
+FROM node
 
 WORKDIR /app
 COPY . /app
 RUN npm install
- 
+
+USER node
+
 CMD [ "npm", "start" ]
