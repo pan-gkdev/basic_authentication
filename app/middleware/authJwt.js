@@ -4,8 +4,11 @@ const db = require('../models')
 const User = db.user
 
 verifyToken = (req, res, next) => {
-  let token = req.headers['x-access-token']
-
+  let authHeader = req.headers.authorization
+  let token
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    token = authHeader.substring(7, authHeader.length)
+  }
   if (!token) {
     return res.status(403).send({
       message: 'No token provided!'
