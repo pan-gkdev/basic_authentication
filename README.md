@@ -3,7 +3,7 @@
 Run on local machine (dev)
 
 ```javascript
-docker-compose up
+docker-compose up --build
 ```
 
 Postman
